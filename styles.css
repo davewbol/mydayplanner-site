@@ -1,0 +1,18 @@
+/* Day Planner - Custom Styles */
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: all 0.2s ease;
+}
+
+/* Selection color */
+::selection {
+  background-color: #c7d2fe;
+  color: #312e81;
+}
