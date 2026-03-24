@@ -1,4 +1,4 @@
-/* Day Planner - Custom Styles */
+/* My Day Planner - Custom Styles */
 
 /* Smooth scrolling for anchor links */
 html {
@@ -11,8 +11,8 @@ a, button {
   transition: all 0.2s ease;
 }
 
-/* Selection color */
+/* Selection color matching sky blue brand */
 ::selection {
-  background-color: #c7d2fe;
-  color: #312e81;
+  background-color: #bae6fd;
+  color: #0c4a6e;
 }
