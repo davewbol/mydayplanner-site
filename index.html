@@ -11,74 +11,60 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sky: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' },
-            brand: { orange: '#f59e0b', yellow: '#fbbf24', green: '#22c55e', 'green-light': '#86efac' },
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white text-gray-800 antialiased">
+<body>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-sky-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="owl-logo.png" alt="My Day Planner logo" class="h-12 sm:h-14">
+  <!-- Header / Nav -->
+  <header class="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">🦉</div>
+        <span class="logo-wordmark">My Day Planner</span>
       </a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-600">
-        <a href="#features" class="hover:text-sky-600 transition">Features</a>
-        <a href="#how-it-works" class="hover:text-sky-600 transition">How It Works</a>
-        <a href="#download" class="inline-flex items-center px-5 py-2.5 bg-sky-500 text-white rounded-full hover:bg-sky-600 transition shadow-md shadow-sky-200">Get Started</a>
+      <nav class="nav-links">
+        <a href="#features" class="site-nav-link">Features</a>
+        <a href="#how-it-works" class="site-nav-link">How It Works</a>
+        <a href="#download" class="btn btn-on-dark btn-md">Get Started</a>
       </nav>
-      <!-- Mobile menu button -->
-      <button id="mobile-menu-btn" class="sm:hidden p-2 text-gray-600" aria-label="Menu">
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden sm:hidden border-t border-sky-100 bg-white px-4 pb-4">
-      <a href="#features" class="block py-2 text-gray-600 hover:text-sky-600">Features</a>
-      <a href="#how-it-works" class="block py-2 text-gray-600 hover:text-sky-600">How It Works</a>
-      <a href="#download" class="block py-2 text-sky-600 font-medium">Get Started</a>
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <a href="#features" class="mobile-menu-link">Features</a>
+      <a href="#how-it-works" class="mobile-menu-link">How It Works</a>
+      <a href="#download" class="mobile-menu-link mobile-menu-cta">Get Started</a>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-amber-50"></div>
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-24 sm:pt-24 sm:pb-32 text-center">
-      <div class="mb-8">
-        <img src="owl-icon.png" alt="My Day Planner owl mascot" class="w-28 h-28 sm:w-36 sm:h-36 mx-auto rounded-3xl shadow-xl shadow-sky-200/50">
+  <section class="site-hero" id="download">
+    <div class="hero-content">
+      <div class="hero-icon-wrapper">
+        <img src="owl-icon.png" alt="My Day Planner owl mascot" class="hero-icon">
       </div>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+      <h1 class="text-display hero-headline">
         Plan Your Day.<br>
-        <span class="text-sky-500">Own Your Time.</span>
+        <span class="hero-accent">Own Your Time.</span>
       </h1>
-      <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-        The simple, beautiful day planner that helps you organize tasks, manage your calendar, and stay focused &mdash; on any device.
+      <p class="text-body-lg hero-sub">
+        The warm, wise companion for anyone who wants to make the most of their time &mdash; without the overwhelm.
       </p>
-      <div id="download" class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition shadow-lg shadow-gray-200">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-on-dark btn-lg">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
           App Store
         </a>
-        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition shadow-lg shadow-gray-200">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 1.33a1 1 0 010 1.724l-2.302 1.33-2.535-2.535 2.535-2.849zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>
+        <a href="#" class="btn btn-on-dark btn-lg">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 1.33a1 1 0 010 1.724l-2.302 1.33-2.535-2.535 2.535-2.849zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>
           Google Play
         </a>
-        <a href="https://app.mydayplanner.app/" class="inline-flex items-center gap-2 px-6 py-3 bg-sky-500 text-white font-semibold rounded-full hover:bg-sky-600 transition shadow-lg shadow-sky-200">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+        <a href="https://app.mydayplanner.app/" class="btn btn-on-dark-outline btn-lg">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
           Open Web App
         </a>
       </div>
@@ -86,151 +72,128 @@
   </section>
 
   <!-- Features -->
-  <section id="features" class="py-20 sm:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Everything You Need to Stay Organized</h2>
-        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Simple tools that work together to help you plan, prioritize, and accomplish more every day.</p>
+  <section id="features" class="site-section">
+    <div class="section-header">
+      <span class="text-label section-label">Features</span>
+      <h2 class="text-h2 section-title">Everything You Need to Stay Organized</h2>
+      <p class="text-body-lg section-sub">Simple tools that work together to help you plan, prioritize, and accomplish more every day.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card feature-card-teal">
+        <div class="feature-icon feature-icon-teal">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h3 class="text-h4 feature-title">Task Planning</h3>
+        <p class="text-body-sm feature-desc">Create, organize, and prioritize your tasks with an intuitive drag-and-drop interface.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Feature 1 -->
-        <div class="bg-sky-50 rounded-2xl p-6 hover:shadow-lg hover:shadow-sky-100 transition border border-sky-100">
-          <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Task Planning</h3>
-          <p class="text-gray-600 text-sm">Create, organize, and prioritize your tasks with an intuitive drag-and-drop interface.</p>
+      <div class="feature-card feature-card-amber">
+        <div class="feature-icon feature-icon-amber">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         </div>
-        <!-- Feature 2 -->
-        <div class="bg-amber-50 rounded-2xl p-6 hover:shadow-lg hover:shadow-amber-100 transition border border-amber-100">
-          <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Calendar View</h3>
-          <p class="text-gray-600 text-sm">See your day, week, or month at a glance. Never miss an appointment or deadline.</p>
+        <h3 class="text-h4 feature-title">Calendar View</h3>
+        <p class="text-body-sm feature-desc">See your day, week, or month at a glance. Never miss an appointment or deadline.</p>
+      </div>
+      <div class="feature-card feature-card-sage">
+        <div class="feature-icon feature-icon-sage">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
         </div>
-        <!-- Feature 3 -->
-        <div class="bg-green-50 rounded-2xl p-6 hover:shadow-lg hover:shadow-green-100 transition border border-green-100">
-          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Reminders</h3>
-          <p class="text-gray-600 text-sm">Get timely notifications so you stay on track without constantly checking your phone.</p>
+        <h3 class="text-h4 feature-title">Smart Reminders</h3>
+        <p class="text-body-sm feature-desc">Get timely notifications so you stay on track without constantly checking your phone.</p>
+      </div>
+      <div class="feature-card feature-card-coral">
+        <div class="feature-icon feature-icon-coral">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
         </div>
-        <!-- Feature 4 -->
-        <div class="bg-orange-50 rounded-2xl p-6 hover:shadow-lg hover:shadow-orange-100 transition border border-orange-100">
-          <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Cross-Platform Sync</h3>
-          <p class="text-gray-600 text-sm">Access your plans from your phone, tablet, or computer. Everything stays in sync automatically.</p>
-        </div>
+        <h3 class="text-h4 feature-title">Cross-Platform Sync</h3>
+        <p class="text-body-sm feature-desc">Access your plans from your phone, tablet, or computer. Everything stays in sync automatically.</p>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section id="how-it-works" class="py-20 sm:py-28 bg-sky-50/50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Get Started in Minutes</h2>
-        <p class="mt-4 text-lg text-gray-600">Three simple steps to a more organized day.</p>
+  <section id="how-it-works" class="site-section site-section-alt">
+    <div class="section-header">
+      <span class="text-label section-label">How It Works</span>
+      <h2 class="text-h2 section-title">Get Started in Minutes</h2>
+      <p class="text-body-lg section-sub">Three simple steps to a more organized day.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number step-number-teal">1</div>
+        <h3 class="text-h4 step-title">Create Your Account</h3>
+        <p class="text-body-sm step-desc">Sign up in seconds with your email. No credit card required to get started.</p>
       </div>
-      <div class="grid sm:grid-cols-3 gap-8 sm:gap-12">
-        <!-- Step 1 -->
-        <div class="text-center">
-          <div class="w-16 h-16 bg-sky-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-sky-200">1</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Create Your Account</h3>
-          <p class="text-gray-600">Sign up in seconds with your email. No credit card required to get started.</p>
-        </div>
-        <!-- Step 2 -->
-        <div class="text-center">
-          <div class="w-16 h-16 bg-amber-400 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">2</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Add Your Tasks</h3>
-          <p class="text-gray-600">Enter your tasks, set priorities and deadlines, and organize them into your schedule.</p>
-        </div>
-        <!-- Step 3 -->
-        <div class="text-center">
-          <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-green-200">3</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Stay on Track</h3>
-          <p class="text-gray-600">Get reminders, check off completed tasks, and watch your productivity grow.</p>
-        </div>
+      <div class="step">
+        <div class="step-number step-number-amber">2</div>
+        <h3 class="text-h4 step-title">Add Your Tasks</h3>
+        <p class="text-body-sm step-desc">Enter your tasks, set priorities and deadlines, and organize them into your schedule.</p>
+      </div>
+      <div class="step">
+        <div class="step-number step-number-sage">3</div>
+        <h3 class="text-h4 step-title">Stay on Track</h3>
+        <p class="text-body-sm step-desc">Get reminders, check off completed tasks, and watch your productivity grow.</p>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="py-20 sm:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Loved by Productive People</h2>
+  <section class="site-section">
+    <div class="section-header">
+      <span class="text-label section-label">Testimonials</span>
+      <h2 class="text-h2 section-title">Loved by Productive People</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Day Planner completely changed how I organize my work. The simplicity is what makes it so powerful."</p>
+        <div class="testimonial-author">
+          <p class="author-name">Sarah M.</p>
+          <p class="author-role">Product Manager</p>
+        </div>
       </div>
-      <div class="grid sm:grid-cols-3 gap-8">
-        <div class="bg-sky-50/60 rounded-2xl p-6 border border-sky-100">
-          <div class="flex items-center gap-1 text-amber-400 mb-4">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-gray-700 mb-4">"Day Planner completely changed how I organize my work. The simplicity is what makes it so powerful."</p>
-          <p class="text-sm font-semibold text-gray-900">Sarah M.</p>
-          <p class="text-sm text-gray-500">Product Manager</p>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I've tried dozens of planners. This is the first one that actually stuck. The cross-device sync is flawless."</p>
+        <div class="testimonial-author">
+          <p class="author-name">James T.</p>
+          <p class="author-role">Freelance Developer</p>
         </div>
-        <div class="bg-sky-50/60 rounded-2xl p-6 border border-sky-100">
-          <div class="flex items-center gap-1 text-amber-400 mb-4">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-gray-700 mb-4">"I've tried dozens of planners. This is the first one that actually stuck. The cross-device sync is flawless."</p>
-          <p class="text-sm font-semibold text-gray-900">James T.</p>
-          <p class="text-sm text-gray-500">Freelance Developer</p>
-        </div>
-        <div class="bg-sky-50/60 rounded-2xl p-6 border border-sky-100">
-          <div class="flex items-center gap-1 text-amber-400 mb-4">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-gray-700 mb-4">"Finally a planner that doesn't try to do everything. It does day planning really well, and that's all I need."</p>
-          <p class="text-sm font-semibold text-gray-900">Emily R.</p>
-          <p class="text-sm text-gray-500">Marketing Director</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Finally a planner that doesn't try to do everything. It does day planning really well, and that's all I need."</p>
+        <div class="testimonial-author">
+          <p class="author-name">Emily R.</p>
+          <p class="author-role">Marketing Director</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-20 sm:py-28 bg-gradient-to-br from-sky-500 to-sky-700">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">Ready to Take Control of Your Day?</h2>
-      <p class="mt-4 text-lg text-sky-100">Join thousands of people who plan smarter with My Day Planner.</p>
-      <a href="#download" class="mt-8 inline-flex items-center px-8 py-4 bg-white text-sky-700 font-semibold rounded-full hover:bg-sky-50 transition shadow-lg text-lg">
-        Get Started Free
-      </a>
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-content">
+      <h2 class="text-h2 cta-headline">Ready to Take Control of Your Day?</h2>
+      <p class="text-body-lg cta-sub">Join thousands of people who plan smarter with My Day Planner.</p>
+      <a href="#download" class="btn btn-on-dark btn-lg">Get Started Free</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 py-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-3">
-          <img src="owl-logo.png" alt="My Day Planner logo" class="h-10">
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="logo">
+          <div class="logo-mark">🦉</div>
+          <span class="logo-wordmark">My Day Planner</span>
         </div>
-        <nav class="flex flex-wrap items-center justify-center gap-6 text-sm">
-          <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
-          <a href="terms.html" class="hover:text-white transition">Terms of Service</a>
-          <a href="mailto:support@mydayplanner.app" class="hover:text-white transition">Contact</a>
+        <nav class="footer-nav">
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms of Service</a>
+          <a href="mailto:support@mydayplanner.app" class="footer-link">Contact</a>
         </nav>
       </div>
-      <div class="mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+      <div class="footer-bottom">
         &copy; 2026 My Day Planner. All rights reserved.
       </div>
     </div>
