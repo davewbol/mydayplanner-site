@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Guide - My Day Planner</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sky: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .color-swatch { width: 100%; aspect-ratio: 1; border-radius: 12px; display: flex; align-items: flex-end; padding: 8px; font-size: 11px; font-family: monospace; }
+    .copy-btn { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+    .color-swatch:hover .copy-btn { opacity: 1; }
+    ::selection { background-color: #bae6fd; color: #0c4a6e; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-sky-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="owl-logo.png" alt="My Day Planner logo" class="h-12">
+      </a>
+      <span class="text-sm font-medium text-gray-400">Brand Style Guide</span>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-20">
+
+    <!-- ==================== BRAND OVERVIEW ==================== -->
+    <section>
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">My Day Planner Style Guide</h1>
+      <p class="text-gray-600 max-w-2xl">This guide defines the visual language for the My Day Planner brand across the marketing website, web app, and mobile app. Use these specifications to maintain brand unity across all platforms.</p>
+    </section>
+
+    <!-- ==================== LOGO ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Logo & Mascot</h2>
+
+      <div class="grid sm:grid-cols-3 gap-8">
+        <div>
+          <div class="bg-white rounded-2xl p-8 flex items-center justify-center border border-gray-200 mb-3">
+            <img src="owl-logo.png" alt="Full logo" class="h-28">
+          </div>
+          <p class="text-sm font-semibold text-gray-700">Full Logo</p>
+          <p class="text-xs text-gray-500 mt-1">Use in headers, marketing, splash screens. Includes mascot + wordmark.</p>
+          <p class="text-xs text-gray-400 mt-1">File: <code>owl-logo.png</code></p>
+        </div>
+        <div>
+          <div class="bg-white rounded-2xl p-8 flex items-center justify-center border border-gray-200 mb-3">
+            <img src="owl-icon.png" alt="App icon" class="h-28 rounded-2xl">
+          </div>
+          <p class="text-sm font-semibold text-gray-700">App Icon</p>
+          <p class="text-xs text-gray-500 mt-1">Use as app icon, favicon, and compact brand mark. Sky blue background with rounded corners.</p>
+          <p class="text-xs text-gray-400 mt-1">File: <code>owl-icon.png</code></p>
+        </div>
+        <div>
+          <div class="bg-white rounded-2xl p-8 flex items-center justify-center border border-gray-200 mb-3">
+            <img src="checkmark.png" alt="Checkmark" class="h-28">
+          </div>
+          <p class="text-sm font-semibold text-gray-700">Checkmark Icon</p>
+          <p class="text-xs text-gray-500 mt-1">Decorative element for task completion, success states, and illustrations.</p>
+          <p class="text-xs text-gray-400 mt-1">File: <code>checkmark.png</code></p>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
+        <p class="text-sm text-amber-800"><strong>Logo usage rules:</strong> Always maintain clear space around the logo equal to the height of the owl's head. Never stretch, rotate, recolor, or place on busy backgrounds. On dark backgrounds, use the full logo as-is (it has a transparent background).</p>
+      </div>
+    </section>
+
+    <!-- ==================== COLORS ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Color Palette</h2>
+
+      <!-- Primary: Sky Blue -->
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Primary &mdash; Sky Blue</h3>
+      <p class="text-sm text-gray-600 mb-4">The core brand color. Use for primary actions, links, active states, and key UI elements.</p>
+      <div class="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-8">
+        <div>
+          <div class="color-swatch bg-sky-50 border border-gray-200"><span class="text-gray-600">50</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#f0f9ff</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-100"><span class="text-gray-600">100</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#e0f2fe</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-200"><span class="text-gray-700">200</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#bae6fd</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-300"><span class="text-gray-700">300</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#7dd3fc</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-400"><span class="text-white">400</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#38bdf8</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-500"><span class="text-white">500</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#0ea5e9</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-600"><span class="text-white">600</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#0284c7</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-700"><span class="text-white">700</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#0369a1</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-800"><span class="text-white">800</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#075985</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-sky-900"><span class="text-white">900</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#0c4a6e</p>
+        </div>
+      </div>
+
+      <!-- Accent Colors -->
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Accent Colors</h3>
+      <p class="text-sm text-gray-600 mb-4">Used for secondary actions, status indicators, categories, and visual variety. Drawn from the owl illustration.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div>
+          <div class="rounded-2xl p-4 text-center" style="background: #f59e0b;">
+            <p class="text-white font-semibold text-sm">Amber / Orange</p>
+            <p class="text-amber-100 text-xs mt-1">#f59e0b</p>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">Stars, highlights, warnings, calendar events</p>
+        </div>
+        <div>
+          <div class="rounded-2xl p-4 text-center" style="background: #fbbf24;">
+            <p class="text-amber-900 font-semibold text-sm">Yellow</p>
+            <p class="text-amber-800 text-xs mt-1">#fbbf24</p>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">Checkmarks, sunny accents, pending states</p>
+        </div>
+        <div>
+          <div class="rounded-2xl p-4 text-center" style="background: #22c55e;">
+            <p class="text-white font-semibold text-sm">Green</p>
+            <p class="text-green-100 text-xs mt-1">#22c55e</p>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">Success, completed tasks, positive states</p>
+        </div>
+        <div>
+          <div class="rounded-2xl p-4 text-center" style="background: #f97316;">
+            <p class="text-white font-semibold text-sm">Orange</p>
+            <p class="text-orange-100 text-xs mt-1">#f97316</p>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">Urgency, overdue, important badges</p>
+        </div>
+      </div>
+
+      <!-- Neutrals -->
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Neutrals</h3>
+      <p class="text-sm text-gray-600 mb-4">For text, backgrounds, borders, and UI chrome.</p>
+      <div class="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-8">
+        <div>
+          <div class="color-swatch bg-gray-50 border border-gray-200"><span class="text-gray-500">50</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#f9fafb</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-100"><span class="text-gray-600">100</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#f3f4f6</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-200"><span class="text-gray-600">200</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#e5e7eb</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-300"><span class="text-gray-700">300</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#d1d5db</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-400"><span class="text-white">400</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#9ca3af</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-500"><span class="text-white">500</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#6b7280</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-600"><span class="text-white">600</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#4b5563</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-700"><span class="text-white">700</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#374151</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-800"><span class="text-white">800</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#1f2937</p>
+        </div>
+        <div>
+          <div class="color-swatch bg-gray-900"><span class="text-white">900</span></div>
+          <p class="text-xs text-gray-500 mt-1 text-center">#111827</p>
+        </div>
+      </div>
+
+      <!-- Semantic Colors -->
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Semantic / Status Colors</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-gray-200 text-left">
+              <th class="py-2 pr-4 font-semibold text-gray-700">State</th>
+              <th class="py-2 pr-4 font-semibold text-gray-700">Color</th>
+              <th class="py-2 pr-4 font-semibold text-gray-700">Hex</th>
+              <th class="py-2 font-semibold text-gray-700">Usage</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">Success</td>
+              <td class="py-2 pr-4"><span class="inline-block w-4 h-4 rounded" style="background:#22c55e"></span></td>
+              <td class="py-2 pr-4 font-mono text-xs">#22c55e</td>
+              <td class="py-2">Task complete, save confirmation, positive feedback</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">Warning</td>
+              <td class="py-2 pr-4"><span class="inline-block w-4 h-4 rounded" style="background:#f59e0b"></span></td>
+              <td class="py-2 pr-4 font-mono text-xs">#f59e0b</td>
+              <td class="py-2">Due soon, approaching deadline</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">Error</td>
+              <td class="py-2 pr-4"><span class="inline-block w-4 h-4 rounded" style="background:#ef4444"></span></td>
+              <td class="py-2 pr-4 font-mono text-xs">#ef4444</td>
+              <td class="py-2">Validation errors, overdue, destructive actions</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">Info</td>
+              <td class="py-2 pr-4"><span class="inline-block w-4 h-4 rounded" style="background:#0ea5e9"></span></td>
+              <td class="py-2 pr-4 font-mono text-xs">#0ea5e9</td>
+              <td class="py-2">Tips, informational banners, help text</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== TYPOGRAPHY ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Typography</h2>
+
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 mb-6">
+        <p class="text-sm text-gray-500 mb-4">Font family: <strong>System font stack</strong> (Tailwind default). This uses the native font of each platform for optimal readability and performance.</p>
+        <code class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded block overflow-x-auto">font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;</code>
+      </div>
+
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Type Scale</h3>
+      <div class="space-y-6 bg-white rounded-2xl border border-gray-200 p-6">
+        <div class="flex items-baseline gap-4 border-b border-gray-100 pb-4">
+          <span class="text-xs text-gray-400 w-24 shrink-0">Display / H1</span>
+          <span class="text-4xl sm:text-5xl font-extrabold text-gray-900">Plan Your Day</span>
+        </div>
+        <div class="flex items-baseline gap-4 border-b border-gray-100 pb-4">
+          <span class="text-xs text-gray-400 w-24 shrink-0">H2</span>
+          <span class="text-3xl font-bold text-gray-900">Section Heading</span>
+        </div>
+        <div class="flex items-baseline gap-4 border-b border-gray-100 pb-4">
+          <span class="text-xs text-gray-400 w-24 shrink-0">H3</span>
+          <span class="text-xl font-semibold text-gray-900">Card Title</span>
+        </div>
+        <div class="flex items-baseline gap-4 border-b border-gray-100 pb-4">
+          <span class="text-xs text-gray-400 w-24 shrink-0">Body Large</span>
+          <span class="text-lg text-gray-600">Descriptive text or subtitle</span>
+        </div>
+        <div class="flex items-baseline gap-4 border-b border-gray-100 pb-4">
+          <span class="text-xs text-gray-400 w-24 shrink-0">Body</span>
+          <span class="text-base text-gray-700">Standard paragraph text for content</span>
+        </div>
+        <div class="flex items-baseline gap-4 border-b border-gray-100 pb-4">
+          <span class="text-xs text-gray-400 w-24 shrink-0">Small</span>
+          <span class="text-sm text-gray-600">Secondary text, labels, captions</span>
+        </div>
+        <div class="flex items-baseline gap-4">
+          <span class="text-xs text-gray-400 w-24 shrink-0">XS</span>
+          <span class="text-xs text-gray-500">Timestamps, metadata, fine print</span>
+        </div>
+      </div>
+
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-gray-200 text-left">
+              <th class="py-2 pr-4 font-semibold text-gray-700">Element</th>
+              <th class="py-2 pr-4 font-semibold text-gray-700">Size</th>
+              <th class="py-2 pr-4 font-semibold text-gray-700">Weight</th>
+              <th class="py-2 font-semibold text-gray-700">Color</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Display / H1</td><td class="py-2 pr-4 font-mono text-xs">36-48px</td><td class="py-2 pr-4">800 (extrabold)</td><td class="py-2">gray-900 #111827</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">H2</td><td class="py-2 pr-4 font-mono text-xs">30px</td><td class="py-2 pr-4">700 (bold)</td><td class="py-2">gray-900 #111827</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">H3</td><td class="py-2 pr-4 font-mono text-xs">20px</td><td class="py-2 pr-4">600 (semibold)</td><td class="py-2">gray-900 #111827</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Body</td><td class="py-2 pr-4 font-mono text-xs">16px</td><td class="py-2 pr-4">400 (normal)</td><td class="py-2">gray-700 #374151</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Body secondary</td><td class="py-2 pr-4 font-mono text-xs">16px</td><td class="py-2 pr-4">400 (normal)</td><td class="py-2">gray-600 #4b5563</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Small / Label</td><td class="py-2 pr-4 font-mono text-xs">14px</td><td class="py-2 pr-4">500 (medium)</td><td class="py-2">gray-600 #4b5563</td></tr>
+            <tr><td class="py-2 pr-4">Caption / XS</td><td class="py-2 pr-4 font-mono text-xs">12px</td><td class="py-2 pr-4">400 (normal)</td><td class="py-2">gray-500 #6b7280</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== BUTTONS ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Buttons</h2>
+
+      <div class="space-y-8">
+        <!-- Primary -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Primary</h3>
+          <div class="flex flex-wrap gap-3 items-center mb-3">
+            <button class="px-6 py-3 bg-sky-500 text-white font-semibold rounded-full hover:bg-sky-600 transition shadow-md shadow-sky-200">Primary Button</button>
+            <button class="px-5 py-2.5 bg-sky-500 text-white font-semibold rounded-full text-sm hover:bg-sky-600 transition shadow-md shadow-sky-200">Small Primary</button>
+          </div>
+          <p class="text-xs text-gray-500">Background: sky-500 <code class="bg-gray-100 px-1 rounded">#0ea5e9</code> &middot; Hover: sky-600 <code class="bg-gray-100 px-1 rounded">#0284c7</code> &middot; Text: white &middot; Radius: full (pill) &middot; Shadow: sky-200</p>
+        </div>
+
+        <!-- Secondary -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Secondary</h3>
+          <div class="flex flex-wrap gap-3 items-center mb-3">
+            <button class="px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition shadow-md shadow-gray-200">Secondary Button</button>
+          </div>
+          <p class="text-xs text-gray-500">Background: gray-900 <code class="bg-gray-100 px-1 rounded">#111827</code> &middot; Hover: gray-800 &middot; Text: white &middot; Radius: full</p>
+        </div>
+
+        <!-- Outline -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Outline / Ghost</h3>
+          <div class="flex flex-wrap gap-3 items-center mb-3">
+            <button class="px-6 py-3 bg-white text-sky-600 font-semibold rounded-full border-2 border-sky-200 hover:border-sky-400 transition">Outline Button</button>
+          </div>
+          <p class="text-xs text-gray-500">Background: white &middot; Border: sky-200, hover sky-400 &middot; Text: sky-600 <code class="bg-gray-100 px-1 rounded">#0284c7</code></p>
+        </div>
+
+        <!-- Success -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Success / Complete</h3>
+          <div class="flex flex-wrap gap-3 items-center mb-3">
+            <button class="px-6 py-3 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition shadow-md shadow-green-200">Mark Complete</button>
+          </div>
+          <p class="text-xs text-gray-500">Background: green-500 <code class="bg-gray-100 px-1 rounded">#22c55e</code> &middot; Hover: green-600</p>
+        </div>
+
+        <!-- Danger -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Danger / Destructive</h3>
+          <div class="flex flex-wrap gap-3 items-center mb-3">
+            <button class="px-6 py-3 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600 transition shadow-md shadow-red-200">Delete</button>
+            <button class="px-6 py-3 bg-white text-red-600 font-semibold rounded-full border-2 border-red-200 hover:border-red-400 transition">Cancel</button>
+          </div>
+          <p class="text-xs text-gray-500">Solid: red-500 <code class="bg-gray-100 px-1 rounded">#ef4444</code> &middot; Outline: border red-200, text red-600</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CARDS ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Cards</h2>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- Feature card -->
+        <div class="bg-sky-50 rounded-2xl p-6 border border-sky-100 hover:shadow-lg hover:shadow-sky-100 transition">
+          <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Feature Card (Sky)</h3>
+          <p class="text-gray-600 text-sm">Background: sky-50, border: sky-100, icon container: sky-100, icon: sky-600</p>
+        </div>
+
+        <!-- Amber card -->
+        <div class="bg-amber-50 rounded-2xl p-6 border border-amber-100 hover:shadow-lg hover:shadow-amber-100 transition">
+          <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Feature Card (Amber)</h3>
+          <p class="text-gray-600 text-sm">Background: amber-50, border: amber-100, icon container: amber-100, icon: amber-600</p>
+        </div>
+
+        <!-- Green card -->
+        <div class="bg-green-50 rounded-2xl p-6 border border-green-100 hover:shadow-lg hover:shadow-green-100 transition">
+          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Feature Card (Green)</h3>
+          <p class="text-gray-600 text-sm">Background: green-50, border: green-100, icon container: green-100, icon: green-600</p>
+        </div>
+
+        <!-- Orange card -->
+        <div class="bg-orange-50 rounded-2xl p-6 border border-orange-100 hover:shadow-lg hover:shadow-orange-100 transition">
+          <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Feature Card (Orange)</h3>
+          <p class="text-gray-600 text-sm">Background: orange-50, border: orange-100, icon container: orange-100, icon: orange-600</p>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-white rounded-2xl border border-gray-200 p-6">
+        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Card Specs</h3>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li>Border radius: <code class="bg-gray-100 px-1 rounded text-xs">16px</code> (rounded-2xl)</li>
+          <li>Padding: <code class="bg-gray-100 px-1 rounded text-xs">24px</code> (p-6)</li>
+          <li>Border: <code class="bg-gray-100 px-1 rounded text-xs">1px solid</code> matching color-100</li>
+          <li>Hover shadow: <code class="bg-gray-100 px-1 rounded text-xs">0 10px 15px -3px</code> matching color-100</li>
+          <li>Icon container: <code class="bg-gray-100 px-1 rounded text-xs">48x48px</code>, rounded-xl (12px)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== SPACING & LAYOUT ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Spacing & Layout</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-gray-200 text-left">
+              <th class="py-2 pr-4 font-semibold text-gray-700">Element</th>
+              <th class="py-2 pr-4 font-semibold text-gray-700">Value</th>
+              <th class="py-2 font-semibold text-gray-700">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Max content width</td><td class="py-2 pr-4 font-mono text-xs">1152px</td><td class="py-2">max-w-6xl</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Max text width</td><td class="py-2 pr-4 font-mono text-xs">768px</td><td class="py-2">max-w-3xl (legal pages, long text)</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Side padding</td><td class="py-2 pr-4 font-mono text-xs">16px / 24px</td><td class="py-2">px-4 mobile, px-6 desktop</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Section padding</td><td class="py-2 pr-4 font-mono text-xs">80px / 112px</td><td class="py-2">py-20 mobile, py-28 desktop</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Card gap</td><td class="py-2 pr-4 font-mono text-xs">32px</td><td class="py-2">gap-8</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 pr-4">Base unit</td><td class="py-2 pr-4 font-mono text-xs">4px</td><td class="py-2">Tailwind spacing scale (1 = 4px)</td></tr>
+            <tr><td class="py-2 pr-4">Border radius</td><td class="py-2 pr-4 font-mono text-xs">see below</td><td class="py-2">Consistently rounded</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-lg font-semibold text-gray-800 mt-8 mb-4">Border Radius Scale</h3>
+      <div class="flex flex-wrap gap-6 items-end">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-sky-200 rounded"></div>
+          <p class="text-xs text-gray-500 mt-2">4px<br>rounded</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-sky-300 rounded-lg"></div>
+          <p class="text-xs text-gray-500 mt-2">8px<br>rounded-lg</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-sky-400 rounded-xl"></div>
+          <p class="text-xs text-gray-500 mt-2">12px<br>rounded-xl</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-sky-500 rounded-2xl"></div>
+          <p class="text-xs text-gray-500 mt-2">16px<br>rounded-2xl</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-sky-600 rounded-3xl"></div>
+          <p class="text-xs text-gray-500 mt-2">24px<br>rounded-3xl</p>
+        </div>
+        <div class="text-center">
+          <div class="w-20 h-12 bg-sky-700 rounded-full"></div>
+          <p class="text-xs text-gray-500 mt-2">full<br>buttons/pills</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SHADOWS ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Shadows</h2>
+      <p class="text-sm text-gray-600 mb-6">Use colored shadows matching the element's accent color for a softer, more cohesive look.</p>
+
+      <div class="flex flex-wrap gap-6">
+        <div class="text-center">
+          <div class="w-24 h-24 bg-sky-500 rounded-2xl shadow-lg shadow-sky-200"></div>
+          <p class="text-xs text-gray-500 mt-2">shadow-lg<br>shadow-sky-200</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 bg-amber-400 rounded-2xl shadow-lg shadow-amber-200"></div>
+          <p class="text-xs text-gray-500 mt-2">shadow-lg<br>shadow-amber-200</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 bg-green-500 rounded-2xl shadow-lg shadow-green-200"></div>
+          <p class="text-xs text-gray-500 mt-2">shadow-lg<br>shadow-green-200</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 bg-gray-900 rounded-2xl shadow-lg shadow-gray-300"></div>
+          <p class="text-xs text-gray-500 mt-2">shadow-lg<br>shadow-gray-300</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DESIGN PRINCIPLES ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Design Principles</h2>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Friendly & Approachable</h3>
+          <p class="text-sm text-gray-600">Use rounded shapes, warm colors, and the owl mascot to create a welcoming feel. Avoid sharp corners and harsh contrasts.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Clean & Uncluttered</h3>
+          <p class="text-sm text-gray-600">Generous whitespace, clear hierarchy, and minimal decoration. Let content breathe. Every element should earn its place.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Cheerful Color Coding</h3>
+          <p class="text-sm text-gray-600">Use the four accent colors (sky, amber, green, orange) to differentiate features, categories, and states. Never use more than two accent colors in the same view.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Consistent Across Platforms</h3>
+          <p class="text-sm text-gray-600">The same palette, typography scale, and spacing system should be used on web, iOS, and Android. Platform-specific patterns (native nav bars, system fonts) are acceptable but colors must match.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CSS VARIABLES ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">CSS Variables Reference</h2>
+      <p class="text-sm text-gray-600 mb-4">Copy these into your web app or design system for consistent colors.</p>
+
+      <div class="bg-gray-900 rounded-2xl p-6 overflow-x-auto">
+        <pre class="text-sm text-gray-300 leading-relaxed"><code>:root {
+  /* Primary - Sky Blue */
+  --color-primary-50:  #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;  /* Main brand color */
+  --color-primary-600: #0284c7;  /* Hover / links */
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  /* Accent */
+  --color-amber:   #f59e0b;  /* Warm orange/amber */
+  --color-yellow:  #fbbf24;  /* Sunny yellow */
+  --color-green:   #22c55e;  /* Success green */
+  --color-orange:  #f97316;  /* Urgency orange */
+
+  /* Semantic */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error:   #ef4444;
+  --color-info:    #0ea5e9;
+
+  /* Neutrals */
+  --color-gray-50:  #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Spacing */
+  --space-unit: 4px;
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- ==================== MOBILE APP NOTES ==================== -->
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">Mobile App Notes</h2>
+
+      <div class="space-y-4">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">iOS (Swift / SwiftUI)</h3>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>Use system font (SF Pro) &mdash; matches the system stack approach</li>
+            <li>Map Tailwind colors to SwiftUI <code class="bg-gray-100 px-1 rounded text-xs">Color</code> assets in the asset catalog</li>
+            <li>Use <code class="bg-gray-100 px-1 rounded text-xs">.clipShape(RoundedRectangle(cornerRadius: 16))</code> for cards</li>
+            <li>Use <code class="bg-gray-100 px-1 rounded text-xs">Capsule()</code> for pill buttons</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Android (Jetpack Compose / Material)</h3>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>Use system font (Roboto) &mdash; matches the system stack approach</li>
+            <li>Map colors to Material 3 color scheme with sky-500 as primary</li>
+            <li>Use <code class="bg-gray-100 px-1 rounded text-xs">RoundedCornerShape(16.dp)</code> for cards</li>
+            <li>Use <code class="bg-gray-100 px-1 rounded text-xs">CircleShape</code> or large corner radius for pill buttons</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6">
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">React Native / Flutter</h3>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>Use the CSS variables above, translated to your framework's token system</li>
+            <li>Match border radius values: 4, 8, 12, 16, 24, 9999 (full)</li>
+            <li>Shadow color should match the accent color at 20% opacity</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 mt-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center text-sm">
+      <p>&copy; 2026 My Day Planner. Internal style guide &mdash; not for public distribution.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
